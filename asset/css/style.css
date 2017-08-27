@@ -8227,3 +8227,28 @@ body.md-skin {
     margin: 0;
   }
 }
+.profile-element {
+    text-align: center;
+}
+.profile-element img {
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+}
+.title-nav {
+  height: 50px;
+  padding: 0;
+  width: 200px;
+  display: inline-table;
+  margin-left: 250px;
+}
+.title-nav img{
+  height: 35px;
+  margin-top: -15px;
+  margin-right: 10px;
+}
+.title-nav span{
+  font-size: 20px;
+  line-height: 60px;
+  color: #FFFFFF;
+}

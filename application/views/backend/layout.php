@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AdminIgniter Dasbor</title>
+    <link rel="icon" href="<?php echo asset_url()?>favicon.ico" type="image/x-icon" />
     <link href="<?php echo asset_url() ?>bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo asset_url() ?>font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="<?php echo asset_url() ?>css/animate.css" rel="stylesheet">
@@ -16,29 +17,22 @@
                 <ul class="nav metismenu" id="side-menu">
                     <li class="nav-header">
                         <div class="dropdown profile-element"> <span>
-                                <img alt="image" class="img-circle" src="<?php echo asset_url() ?>img/profile_small.jpg" />
+                                <img alt="image" class="img-circle" src="<?php echo asset_url() ?>img/a6.jpg" />
                                  </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                                <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
-                                 </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span> </a>
+                                <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><?php echo $session['name']?></strong>
+                                 </span> <span class="text-muted text-xs block"><?php echo ucwords($session['group'])?> <b class="caret"></b></span> </span> </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                                <li><a href="profile.html">Profile</a></li>
-                                <li><a href="contacts.html">Contacts</a></li>
-                                <li><a href="mailbox.html">Mailbox</a></li>
+                                <li><a href="#">Profile</a></li>
                                 <li class="divider"></li>
-                                <li><a href="login.html">Logout</a></li>
+                                <li><a href="<?php echo backend_url()?>user/logout">Logout</a></li>
                             </ul>
                         </div>
                         <div class="logo-element">
-                            IN+
+                            AI+
                         </div>
                     </li>
-                    <li class="active">
-                        <a href="<?php echo backend_url()?>"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-diamond"></i> <span class="nav-label">Lorem Ipsum</span></a>
-                    </li>
+                    <?php $this->load->view($menu) ?>
                     
                 </ul>
 
@@ -50,18 +44,22 @@
             <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-                <form role="search" class="navbar-form-custom" action="search_results.html">
+                <!-- <form role="search" class="navbar-form-custom" action="search_results.html">
                     <div class="form-group">
                         <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
                     </div>
-                </form>
+                </form> -->
+                <div class="title-nav">
+                    <img src="<?php echo asset_url()?>img/logo-coffee.png">
+                    <span>AdminIgniter</span>
+                </div>
             </div>
                 <ul class="nav navbar-top-links navbar-right">
-                    <li>
+                    <!-- <li>
                         <span class="m-r-sm text-muted welcome-message">Selamat Datang di AdminIgniter</span>
-                    </li>
+                    </li> -->
                     <li>
-                        <a href="#">
+                        <a href="<?php echo backend_url()?>user/logout">
                             <i class="fa fa-sign-out"></i> Log out
                         </a>
                     </li>
